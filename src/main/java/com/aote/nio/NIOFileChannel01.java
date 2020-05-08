@@ -8,7 +8,7 @@ import java.nio.channels.FileChannel;
  * @Author aote
  * @Date 2020-05-08 00:18
  * @Version 1.0
- * @Description TODO
+ * @Description NIO写文件
  **/
 public class NIOFileChannel01 {
 
