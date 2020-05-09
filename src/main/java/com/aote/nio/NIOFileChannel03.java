@@ -22,7 +22,7 @@ public class NIOFileChannel03 {
         FileOutputStream fileOutputStream = new FileOutputStream("E://M.txt");
         FileChannel fileOutChannel = fileOutputStream.getChannel();
 
-        ByteBuffer byteBuffer = ByteBuffer.allocate(2);
+        ByteBuffer byteBuffer = ByteBuffer.allocate(5);
 
         // 循环读取
         while (true) {
