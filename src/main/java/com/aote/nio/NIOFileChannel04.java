@@ -13,7 +13,7 @@ public class NIOFileChannel04 {
 
     public static void main(String[] args) throws Exception {
         FileInputStream fileInputStream = new FileInputStream("DSC_2177.JPG");
-        FileOutputStream fileOutputStream = new FileOutputStream("E://DSC_2177.JPG");
+        FileOutputStream fileOutputStream = new FileOutputStream("/Users/aote/Downloads/DSC_2177.JPG");
 
         // 获取对应的channel
         FileChannel sourceChannel = fileInputStream.getChannel();

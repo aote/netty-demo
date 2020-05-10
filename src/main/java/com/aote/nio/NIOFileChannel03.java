@@ -19,7 +19,7 @@ public class NIOFileChannel03 {
         FileChannel fileInputChannel = fileInputStream.getChannel();
 
         // 可以理解为FileOutputStream和E://M.txt文件关联，然后又创建了一个FileChannel
-        FileOutputStream fileOutputStream = new FileOutputStream("E://M.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("/Users/aote/Downloads/M.txt");
         FileChannel fileOutChannel = fileOutputStream.getChannel();
 
         ByteBuffer byteBuffer = ByteBuffer.allocate(5);
