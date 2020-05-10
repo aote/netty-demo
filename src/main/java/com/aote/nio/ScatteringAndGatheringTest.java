@@ -59,12 +59,15 @@ public class ScatteringAndGatheringTest {
                 }
                 // 将所有buffer clear
                 Arrays.asList(byteBuffers).forEach(ByteBuffer::clear);
+                /*
+                // ByteBuffer::clear原始写法
                 Arrays.asList(byteBuffers).forEach(new Consumer<ByteBuffer>() {
                     @Override
                     public void accept(ByteBuffer byteBuffer) {
                         byteBuffer.clear();
                     }
                 });
+                */
 
                 System.out.println("byteRead="+byteRead + " byteWrite="+byteWrite + " messageLength="+messageLength);
             }
