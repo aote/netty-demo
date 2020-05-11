@@ -47,30 +47,30 @@ public class ScatteringAndGatheringTest {
                 Arrays.asList(byteBuffers).stream().map(byteBuffer ->
                         "position="+byteBuffer.position() + " ,limit="+ byteBuffer.limit()
                 ).forEach(System.out::println);
-
-                // 将所有buffer进行翻转
-                Arrays.asList(byteBuffers).forEach(ByteBuffer::flip);
-
-                // 将数据读取显示到客户端
-                long byteWrite = 0;
-                while (byteWrite < messageLength) {
-                    long l1 = socketChannel.write(byteBuffers);
-                    byteWrite += l1;
-                }
-                // 将所有buffer clear
-                Arrays.asList(byteBuffers).forEach(ByteBuffer::clear);
-                /*
-                // ByteBuffer::clear原始写法
-                Arrays.asList(byteBuffers).forEach(new Consumer<ByteBuffer>() {
-                    @Override
-                    public void accept(ByteBuffer byteBuffer) {
-                        byteBuffer.clear();
-                    }
-                });
-                */
-
-                System.out.println("byteRead="+byteRead + " byteWrite="+byteWrite + " messageLength="+messageLength);
             }
+
+            // 将所有buffer进行翻转
+            Arrays.asList(byteBuffers).forEach(ByteBuffer::flip);
+
+            // 将数据读取显示到客户端
+            long byteWrite = 0;
+            while (byteWrite < messageLength) {
+                long l = socketChannel.write(byteBuffers);
+                byteWrite += l;
+            }
+            // 将所有buffer clear
+            Arrays.asList(byteBuffers).forEach(ByteBuffer::clear);
+            /*
+            // ByteBuffer::clear原始写法
+            Arrays.asList(byteBuffers).forEach(new Consumer<ByteBuffer>() {
+                @Override
+                public void accept(ByteBuffer byteBuffer) {
+                    byteBuffer.clear();
+                }
+            });
+            */
+            System.out.println("byteRead="+byteRead + " byteWrite="+byteWrite + " messageLength="+messageLength);
+
         }
     }
 
