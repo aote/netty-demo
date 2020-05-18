@@ -9,13 +9,13 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 /**
  * @author: Weicf
  * @date: 2020-05-18 17:22
- * @description:
+ * @description: 简单的http服务案例
  */
 public class MyHttpServer {
 
     public static void main(String[] args) throws Exception {
 
-        EventLoopGroup bossGroup = new NioEventLoopGroup();
+        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
         try {
