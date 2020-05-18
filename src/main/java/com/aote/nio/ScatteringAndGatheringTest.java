@@ -1,12 +1,10 @@
 package com.aote.nio;
 
-import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Arrays;
-import java.util.function.Consumer;
 
 /**
  * @Author aote

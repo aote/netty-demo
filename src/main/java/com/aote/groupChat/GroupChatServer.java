@@ -10,7 +10,7 @@ import java.util.Iterator;
 /**
  * @author: Weicf
  * @date: 2020-05-15 11:51
- * @description: 群聊
+ * @description: 基于nio群聊
  */
 public class GroupChatServer {
 
