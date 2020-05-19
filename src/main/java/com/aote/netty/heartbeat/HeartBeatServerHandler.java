@@ -1,9 +1,9 @@
 package com.aote.netty.heartbeat;
 
+
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleStateEvent;
-import io.netty.handler.timeout.IdleStateHandler;
 
 /**
  * @author: Weicf
@@ -19,7 +19,7 @@ public class HeartBeatServerHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
-        if (evt instanceof IdleStateHandler) {
+        if (evt instanceof IdleStateEvent) {
             // 将evt向下转型IdleStateEvent
             IdleStateEvent event = (IdleStateEvent) evt;
             String eventType = null;
@@ -32,8 +32,6 @@ public class HeartBeatServerHandler extends ChannelInboundHandlerAdapter {
                     break;
                 case ALL_IDLE:
                     eventType = "读写空闲";
-                    break;
-                default:
                     break;
             }
             System.out.println(ctx.channel().remoteAddress() + "--超时时间--" + eventType);
